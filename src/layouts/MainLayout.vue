@@ -12,7 +12,7 @@
         />
 
         <q-toolbar-title>
-          Boilerplate
+          {{ $t('navbar.TITLE_LABEL') }}
         </q-toolbar-title>
 
         <div>Quasar v{{ $q.version }}</div>

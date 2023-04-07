@@ -1,6 +1,5 @@
 <template>
   <q-page class="flex flex-center">
-    {{ i18n }}
   </q-page>
 </template>
 
