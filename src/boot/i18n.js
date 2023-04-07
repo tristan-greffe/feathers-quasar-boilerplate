@@ -22,7 +22,6 @@ function getLocale () {
 
 
 export default boot(({ app }) => {
-  console.log(Quasar)
   const i18n = createI18n({
     locale: getLocale() == 'fr' ? 'fr-FR' : Quasar.lang.isoName,
     globalInjection: true,
