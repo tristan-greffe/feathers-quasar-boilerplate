@@ -1,5 +1,8 @@
 {
   "navbar": {
-    "TITLE_LABEL": "Feathers Quasar Boilerplate"
+    "TITLE_LABEL": "Feathers Quasar Boilerplate",
+    "LOGIN_LABEL": "Sign in",
+    "REGISTER_LABEL": "Sign up",
+    "LOGOUT_LABEL": "Sign Out"
   }
 }

@@ -1,12 +1,16 @@
 <template>
-  <q-page class="flex flex-center">
-  </q-page>
+  <q-layout view="lHh Lpr lFf">
+    <Header />
+    <q-page-container>
+      <q-page class="flex flex-center">
+      </q-page>
+    </q-page-container>
+    <Footer />
+  </q-layout>
 </template>
 
 <script>
-import { defineComponent } from 'vue'
-
-export default defineComponent({
-  name: 'IndexPage'
-})
+export default {
+  name: 'IndexPage',
+}
 </script>
