@@ -11,7 +11,7 @@ import express, {
 } from '@feathersjs/express'
 import configuration from '@feathersjs/configuration'
 import socketio from '@feathersjs/socketio'
-import { configurationValidator } from './configuration.js'
+
 import { logger } from './logger.js'
 import { logError } from './hooks/log-error.js'
 import { mongodb } from './mongodb.js'
@@ -24,7 +24,7 @@ import { channels } from './channels.js'
 const app = express(feathers())
 
 // Load app configuration
-app.configure(configuration(configurationValidator))
+app.configure(configuration())
 app.use(cors())
 app.use(json())
 app.use(urlencoded({ extended: true }))
