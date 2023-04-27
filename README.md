@@ -1,4 +1,4 @@
-# Feathers Quasar Boilerplate
+# [Feathers](https://feathersjs.com/) [Quasar](https://quasar.dev/) Boilerplate
 
 [![Documentation](https://img.shields.io/badge/documentation-available-brightgreen.svg)](https://tristan-greffe.github.io/feathers-quasar-boilerplate/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
