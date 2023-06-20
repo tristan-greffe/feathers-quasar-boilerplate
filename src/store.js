@@ -10,10 +10,8 @@ export const useStore = defineStore('store', {
     store: { user: {} }
   }),
   actions: {
-    setUser (action) {
-      const store = this.store
-      if (action.type === 'ADD_USER') this.store = { ...store, user: action.payload }
-      if (action.type === 'DELETE_USER') this.store = { ...store, user: {} }
+    setUser (user) {
+      this.store = { ...store, user: user }
     }
   }
 })
