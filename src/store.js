@@ -6,12 +6,13 @@ export function initializeStore(app) {
 }
 
 export const useStore = defineStore('store', {
-  state: () => ({
-    store: { user: {} }
-  }),
+  state: () => ({ user: {} }),
+  getters: {
+    getUser: (state) => state.user
+  },
   actions: {
     setUser (user) {
-      this.store = { ...store, user: user }
+      this.user = user
     }
   }
 })
