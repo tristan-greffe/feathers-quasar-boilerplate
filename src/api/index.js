@@ -4,7 +4,7 @@ import socketio from '@feathersjs/socketio-client'
 import auth from '@feathersjs/authentication-client'
 import rest from '@feathersjs/rest-client'
 
-export function createClient (config) {
+function createClient (config) {
   // Create the client Feathers app
   const api = feathers()
 
@@ -23,9 +23,7 @@ export function createClient (config) {
 
   // Configure authentification
   api.configure(auth({
-    storage: window.localStorage,
-    storageKey: config.apiJwt || 'feathers-jwt',
-    jwtStrategy: 'jwt'
+    path: '/api/authentication'
   }))
 
   return api
