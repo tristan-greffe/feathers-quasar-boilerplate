@@ -28,6 +28,9 @@
 <script setup>
 import { logout } from '../api/session'
 
+// Props
 const props = defineProps(['selectedMenuItem'])
+
+// Emits
 const emit = defineEmits(['setMenuItem'])
 </script>
