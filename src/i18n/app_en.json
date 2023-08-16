@@ -1,8 +1,123 @@
 {
-  "navbar": {
-    "TITLE_LABEL": "Feathers Quasar Boilerplate",
-    "LOGIN_LABEL": "Sign in",
-    "REGISTER_LABEL": "Sign up",
-    "LOGOUT_LABEL": "Sign Out"
+  "OK": "Ok",
+  "CANCEL": "Cancel",
+  "APPLY": "Apply",
+  "CLOSE": "Close",
+  "DELETE": "Delete",
+  "Session": {
+    "DISCONNECT": "The server connection has been lost, please wait until reconnection...",
+    "RECONNECT": "We are trying to reconnect...",
+    "REFUSED": "Your connection have been refused by the server, you have been disconnected...",
+    "RETRY": "Retry",
+    "ALERT": "Alert"
+  },
+  "Tooltip": {
+    "LOGOUT": "Logout",
+    "MANAGE_ACCOUNT": "Manage my account",
+    "DISPLAY_POSITION": "Display the coordinates",
+    "DISPLAY_WEATHER": "Display weather",
+    "ENTER_FULLSCREEN": "Toggle fullscreen mode",
+    "EXIT_FULLSCREEN": "Exit fullscreen mode"
+  },
+  "Login": {
+    "EMAIL_FIELD_LABEL": "Enter your email address",
+    "PASSWORD_FIELD_LABEL": "Enter your password",
+    "LOGIN_LABEL": "Log in",
+    "FORGOT_YOUR_PASSWORD_LABEL": "Forgot your password ?",
+    "DONT_HAVE_AN_ACCOUNT_LABEL": "Don't have an account ?",
+    "LOGIN_ERROR": "Wrong credentials or service unavailable, please try again"
+  },
+  "Register": {
+    "NAME_FIELD_LABEL": "Enter your name",
+    "EMAIL_FIELD_LABEL": "Enter your email address",
+    "PASSWORD_FIELD_LABEL": "Enter a password",
+    "CONFIRM_PASSWORD_FIELD_LABEL": "Confirm your password",
+    "REGISTER_LABEL": "Register",
+    "ALREADY_HAVE_AN_ACCOUNT_LABEL": "Already have an account ?",
+    "WEAK_PASSWORD_MIN": "Your password must be at least 8 characters long",
+    "WEAK_PASSWORD_MAX": "Your password must have a maximum length of 128 characters",
+    "WEAK_PASSWORD_LOWERCASE": "Your password must contain at least one lowercase letter",
+    "WEAK_PASSWORD_UPPERCASE": "Your password must contain at least one capital letter",
+    "WEAK_PASSWORD_DIGITS": "Your password must contain at least one digit",
+    "WEAK_PASSWORD_SYMBOLS": "Your password must contain at least one special character such as :;?!+-.,^@",
+    "WEAK_PASSWORD_ONEOF": "Your password is recognized as one of the most common passwords",
+    "MISSING_NAME": "Your name is required",
+    "MISSING_EMAIL": "Your email is required",
+    "MISSING_PASSWORD": "Your password is required",
+    "MISSING_PASSWORD_CONFIRMATION": "Password confirmation is required",
+    "PASSWORD_CONFIRMATION_NOT_MATCH": "Password confirmation must match password",
+    "EMAIL_VALIDITY": "Your email is invalid",
+    "EMAIL_ALREADY_TAKEN": "Email already taken !",
+    "REGISTER_ERROR": "Wrong input or service unavailable, please try again"
+  },
+  "ForgotPassword": {
+    "TITLE": "Reset my password ?",
+    "MESSAGE": "Enter your email address and we will send you a code to reset your password",
+    "EMAIL_FIELD_LABEL": "Enter your email address",
+    "MISSING_EMAIL": "Your email is required",
+    "EMAIL_VALIDITY": "Your email is invalid",
+    "ERROR_MESSAGE_DEFAULT": "Error while sending email, please check the address and send it again or try again later"
+  },
+  "ResetPassword": {
+    "TITLE": "Reset your password ?",
+    "MESSAGE": "Please enter your new password to proceed",
+    "RESEND_TOKEN": "Resend reset password code",
+    "EMAIL_FIELD_LABEL": "Enter your email address",
+    "PASSWORD_FIELD_LABEL": "Enter your new password",
+    "CONFIRM_PASSWORD_FIELD_LABEL": "Confirm your new password",
+    "TOKEN_FIELD_LABEL": "Enter the code received by email",
+    "MISSING_EMAIL": "Your email is required",
+    "MISSING_PASSWORD": "Your password is required",
+    "MISSING_PASSWORD_CONFIRMATION": "Password confirmation is required",
+    "MISSING_TOKEN": "Code received by email is required",
+    "ERROR_TOKEN_LENGTH": "Code received by email must contain 6 digits",
+    "PASSWORD_CONFIRMATION_NOT_MATCH": "Password confirmation must match password",
+    "EMAIL_VALIDITY": "Your email is invalid",
+    "SUCCESS_MESSAGE": "Password reset, you will receive a confirmation email",
+    "ERROR_MESSAGE": "Error while trying to reset password, please try again"
+  },
+  "DeleteAccountManager": {
+    "TITLE": "Delete my account",
+    "QUESTION": "Are you sure you want to delete your account ?",
+    "CONFIRMATION_TITLE": "Warning: the deletion of your account is irrevocable and all data attached to it will be lost",
+    "CONFIRMATION": "Enter your account email to confirm the deletion",
+    "SUCCESS_MESSAGE": "Your account has been deleted",
+    "ERROR_MESSAGE": "Unable to delete your account, please try again"
+  },
+  "VerifyEmailManager": {
+    "TITLE": "Check my email address",
+    "HELP_LABEL": "Why should I verify my email address ?",
+    "HELP_TEXT": "Verifying your email address improves the security of your account. Once you have verified your email address, both your password and access to your email account are required in order to make any changes to your account credentials, such as your password and contact email address. This helps further protect your account from being stolen by a potential phisher.",
+    "HELP_EMAIL_LABEL": "I never received the verification email, what should I do ?",
+    "HELP_EMAIL_TEXT": "If you do not receive your signup verification email and you are running a Spam filter, check and make sure the message has not been filtered as spam. Please try adding {email} to your contacts or trusted senders list within your email client and attempt to re-verify your email address. You can also click the button below and we'll send you the email again.",
+    "TOKEN_LABEL": "Enter the code received by email to validate your email address",
+    "EMAIL_VERIFIED": "Your address has been verified. An email has been sent to you to confirm the change.",
+    "ACTION": "Resend verification code",
+    "ERROR_MESSAGE": "Invalid code, request a new one",
+    "RESEND_TOKEN_SUCCESS": "A new verification code has been sent to you",
+    "RESEND_TOKEN_ERROR": "We were unable to send you a new verification code. If the problem persists, please contact us."
+  },
+  "PasswordManager": {
+    "TITLE": "Change my password",
+    "PASSWORD_CHANGED": "Your password has been successfully changed",
+    "OLD_PASSWORD_FIELD_LABEL": "Enter your old password",
+    "PASSWORD_FIELD_LABEL": "Enter your new password",
+    "CONFIRM_PASSWORD_FIELD_LABEL": "Confirm your new password",
+    "MISSING_OLD_PASSWORD": "Your old password is required",
+    "MISSING_PASSWORD": "Your new password is required",
+    "MISSING_PASSWORD_CONFIRMATION": "Confirmation of your new password is required",
+    "PASSWORD_CONFIRMATION_NOT_MATCH": "Confirmation of new password must match new password",
+    "PASSWORD_ERROR_MESSAGE": "The data you provided did not allow us to change your password"
+  },
+  "EmailManager": {
+    "TITLE": "Change my email address",
+    "PASSWORD_FIELD_LABEL": "Enter your password",
+    "EMAIL_FIELD_LABEL": "Enter your new email address",
+    "TOKEN_LABEL": "To validate your new email address, enter the code you received by email",
+    "EMAIL_CHANGED": "You new address has been taken into account. An email has been sent to you to confirm the change.",
+    "ERROR_MESSAGE": "Invalid code",
+    "MISSING_PASSWORD": "Your password is required",
+    "MISSING_EMAIL": "Your email is required",
+    "EMAIL_VALIDITY": "Your new email address is invalid"
   }
 }

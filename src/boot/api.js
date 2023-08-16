@@ -3,6 +3,7 @@ import { feathers } from '@feathersjs/feathers'
 import socketio from '@feathersjs/socketio-client'
 import auth from '@feathersjs/authentication-client'
 import rest from '@feathersjs/rest-client'
+import config from 'config'
 
 function createClient (config) {
   // Create the client Feathers app
@@ -30,7 +31,19 @@ function createClient (config) {
 }
 
 export let api
-export function initializeApi (config) {
+function initializeApi (config) {
   api = createClient(config)
   return api
+}
+
+export default ({ app }) => {
+  // Initiate the client
+  const api = initializeApi(config)
+  
+  // Register api propertie to the the vue app
+  app.config.globalProperties.$api = api
+
+  // Register global propertie
+  // FIXME: This is used for testing purpose
+  global.$api = app.config.globalProperties.$api
 }

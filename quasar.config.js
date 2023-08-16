@@ -9,7 +9,19 @@
 // https://v2.quasar.dev/quasar-cli-webpack/quasar-config-js
 
 
-const { configure } = require('quasar/wrappers');
+const path = require('path')
+const fs = require('fs')
+const ESLintPlugin = require('eslint-webpack-plugin')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+const { configure } = require('quasar/wrappers')
+
+const serverPort = process.env.PORT || process.env.HTTPS_PORT || 8081
+const clientPort = process.env.CLIENT_PORT || process.env.HTTPS_CLIENT_PORT || 8080
+
+// Load config based on current NODE_ENV, etc.
+const clientConfig = require('config')
+// Write JSON config
+fs.writeFileSync(path.join('config', 'client-config.json'), JSON.stringify(clientConfig))
 
 module.exports = configure(function (ctx) {
   return {
@@ -23,8 +35,10 @@ module.exports = configure(function (ctx) {
     // --> boot files are part of "main.js"
     // https://v2.quasar.dev/quasar-cli-webpack/boot-files
     boot: [
+      'store',
+      'api',
       'i18n',
-      'utils'
+      'time'
     ],
 
     // https://v2.quasar.dev/quasar-cli-webpack/quasar-config-js#Property%3A-css
@@ -34,18 +48,19 @@ module.exports = configure(function (ctx) {
 
     // https://github.com/quasarframework/quasar/tree/dev/extras
     extras: [
-      // 'ionicons-v4',
-      // 'mdi-v5',
-      // 'fontawesome-v6',
-      // 'eva-icons',
-      // 'themify',
-      // 'line-awesome',
-      // 'roboto-font-latin-ext', // this or either 'roboto-font', NEVER both!
-
-      'roboto-font', // optional, you are not bound to it
-      'material-icons', // optional, you are not bound to it
+      'fontawesome-v6',
+      'roboto-font',
+      'material-icons',
+      'line-awesome'
     ],
 
+    // https://quasar.dev/quasar-cli-webpack/quasar-config-js#property-htmlvariables
+    htmlVariables: {
+      appName: 'Feathers Quasar Boilerplate',
+      appSlug: 'Feathers Quasar Boilerplate',
+      appDescription: 'Feathers Quasar Project Boilerplate'
+    },
+    
     // Full list of options: https://v2.quasar.dev/quasar-cli-webpack/quasar-config-js#Property%3A-build
     build: {
       vueRouterMode: 'history', // available values: 'hash', 'history'
@@ -70,16 +85,71 @@ module.exports = configure(function (ctx) {
       // https://v2.quasar.dev/quasar-cli-webpack/handling-webpack
       // "chain" is a webpack-chain object https://github.com/neutrinojs/webpack-chain
       
-      chainWebpack (/* chain */) {}
+      chainWebpack (chain) {
+        chain.plugin('eslint-webpack-plugin').use(ESLintPlugin, [{ extensions: [ 'js', 'vue' ] }])
+        // Perform bundle analysis
+        if (process.env.ANALYZE_BUNDLE) {
+          chain.plugin('webpack-bundle-analyzer').use(new BundleAnalyzerPlugin({
+            analyzerMode: 'static',
+            reportFilename: 'bundle-analyzer.html'
+          }))
+        }
+      },
       
+      extendWebpack (cfg) {
+        cfg.resolve.fallback = {
+          fs: false,
+          'dom-serializer': false,
+          assert: require.resolve('assert'),
+          crypto: require.resolve('crypto-browserify'),
+          http: require.resolve('stream-http'),
+          https: require.resolve('https-browserify'),
+          path: require.resolve('path-browserify'),
+          stream: require.resolve('stream-browserify'),
+          timers: require.resolve('timers-browserify'),
+          zlib: require.resolve('browserify-zlib')
+        },
+        // Required for old dependencies, i.e. feathers.js
+        cfg.resolve.modules = [
+          path.resolve(__dirname, 'node_modules')
+        ],
+        cfg.resolve.alias = {
+          ...cfg.resolve.alias, // This adds the existing aliases
+          '@components': [
+            path.resolve(__dirname, 'src/components')
+          ],
+          '@i18n': [
+            path.resolve(__dirname, 'src/i18n')
+          ],
+          config: path.resolve(__dirname, 'config/client-config.json')
+        },
+        cfg.optimization.minimize = process.env.DEBUG ? false : cfg.optimization.minimize
+      }
     },
 
     // Full list of options: https://v2.quasar.dev/quasar-cli-webpack/quasar-config-js#Property%3A-devServer
     devServer: {
-      server: {
-        type: 'http'
+      historyApiFallback: true,
+      port: clientPort,
+      proxy: {
+        '/api': {
+          target: 'http://localhost:' + serverPort,
+          changeOrigin: true,
+          logLevel: 'debug'
+        },
+        '/apiws': {
+          target: 'http://localhost:' + serverPort,
+          changeOrigin: true,
+          ws: true,
+          logLevel: 'debug'
+        },
+        // The oauth endpoints are not easy to prefix so we manage it manually
+        '/oauth': {
+          target: 'http://localhost:' + serverPort,
+          changeOrigin: true,
+          logLevel: 'debug'
+        }
       },
-      port: 8080,
       open: true // opens browser window automatically
     },
 
@@ -87,23 +157,23 @@ module.exports = configure(function (ctx) {
     framework: {
       config: {},
 
-      // iconSet: 'material-icons', // Quasar icon set
-      // lang: 'en-US', // Quasar language pack
-
-      // For special cases outside of where the auto-import strategy can have an impact
-      // (like functional components as one of the examples),
-      // you can manually specify Quasar components/directives to be available everywhere:
-      //
-      // components: [],
-      // directives: [],
+      components: [],
 
       // Quasar plugins
-      plugins: []
+      plugins: [
+        'Notify',
+        'Dialog',
+        'Platform',
+        'Loading'
+      ]
     },
 
     // animations: 'all', // --- includes all animations
     // https://quasar.dev/options/animations
-    animations: [],
+    animations: [
+      'fadeIn',
+      'fadeOut'
+    ],
 
     // https://v2.quasar.dev/quasar-cli-webpack/developing-ssr/configuring-ssr
     ssr: {
@@ -119,7 +189,10 @@ module.exports = configure(function (ctx) {
         // Tell browser when a file from the server should expire from cache (in ms)
 
       
-      chainWebpackWebserver (/* chain */) {},
+      chainWebpackWebserver (chain) {
+        chain.plugin('eslint-webpack-plugin')
+          .use(ESLintPlugin, [{ extensions: [ 'js' ] }])
+      },
       
 
       middlewares: [
@@ -130,7 +203,7 @@ module.exports = configure(function (ctx) {
 
     // https://v2.quasar.dev/quasar-cli-webpack/developing-pwa/configuring-pwa
     pwa: {
-      workboxPluginMode: 'GenerateSW', // 'GenerateSW' or 'InjectManifest'
+      workboxPluginMode: 'InjectManifest', // 'GenerateSW' or 'InjectManifest'
       workboxOptions: {}, // only for GenerateSW
 
       // for the custom service worker ONLY (/src-pwa/custom-service-worker.[js|ts])
@@ -207,17 +280,21 @@ module.exports = configure(function (ctx) {
       builder: {
         // https://www.electron.build/configuration/configuration
 
-        appId: 'quasar-project'
+        appId: 'Feathers Quasar Boilerplate'
       },
 
       // "chain" is a webpack-chain object https://github.com/neutrinojs/webpack-chain
       
-      chainWebpackMain (/* chain */) {},
+      chainWebpackMain (chain) {
+        chain.plugin('eslint-webpack-plugin')
+          .use(ESLintPlugin, [{ extensions: [ 'js' ] }])
+      },
       
-
-      
-      chainWebpackPreload (/* chain */) {},
+      chainWebpackPreload (chain) {
+        chain.plugin('eslint-webpack-plugin')
+          .use(ESLintPlugin, [{ extensions: [ 'js' ] }])
+      }
       
     }
   }
-});
+})

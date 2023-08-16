@@ -1,8 +1,124 @@
 {
-  "navbar": {
-    "TITLE_LABEL": "Feathers Quasar Boilerplate",
+  "OK": "Ok",
+  "CANCEL": "Annuler",
+  "APPLY": "Appliquer",
+  "CLOSE": "Fermer",
+  "DELETE": "Supprimer",
+  "Session": {
+    "DISCONNECT": "La connexion au serveur a été interrompue, merci de patienter jusqu'à la reconnexion...",
+    "RECONNECT": "Tentative de reconnexion en cours...",
+    "REFUSED": "Votre connexion a été refusée par le serveur, vous avez été déconnecté...",
+    "RETRY": "Rééssayer",
+    "ALERT": "Alerte"
+  },
+  "Tooltip": {
+    "LOGOUT": "Se déconnecter",
+    "MANAGE_ACCOUNT": "Gérer mon compte",
+    "DISPLAY_POSITION": "Afficher les coordonnées",
+    "DISPLAY_WEATHER": "Afficher la météo",
+    "ENTER_FULLSCREEN": "Basculer en mode plein écran",
+    "EXIT_FULLSCREEN": "Quitter le mode plein écran"
+  },
+  "Login": {
+    "EMAIL_FIELD_LABEL": "Saisissez votre adresse mail",
+    "PASSWORD_FIELD_LABEL": "Saisissez votre mot de passe",
     "LOGIN_LABEL": "Se connecter",
-    "REGISTER_LABEL": "S'inscrire",
-    "LOGOUT_LABEL": "Déconnexion"
+    "FORGOT_YOUR_PASSWORD_LABEL": "Mot de passe oublié ?",
+    "DONT_HAVE_AN_ACCOUNT_LABEL": "Vous n'avez pas de compte ?",
+    "LOGIN_ERROR": "Mauvais identifiants ou service indisponible, veuillez réessayer"
+  },
+  "Register": {
+    "NAME_FIELD_LABEL": "Saisissez votre nom",
+    "EMAIL_FIELD_LABEL": "Saisissez votre adresse mail",
+    "PASSWORD_FIELD_LABEL": "Saisissez un mot de passe",
+    "CONFIRM_PASSWORD_FIELD_LABEL": "Confirmez votre mot de passe",
+    "REGISTER_LABEL": "S'enregistrer",
+    "ALREADY_HAVE_AN_ACCOUNT_LABEL": "Déjà un compte ?",
+    "WEAK_PASSWORD_MIN": "Votre mot de passe doit avoir une taille minimale de 8 caractères",
+    "WEAK_PASSWORD_MAX": "Votre mot de passe doit avoir une taille maximal de 128 caractères",
+    "WEAK_PASSWORD_LOWERCASE": "Votre mot de passe doit contenir au moins une lettre minuscule",
+    "WEAK_PASSWORD_UPPERCASE": "Votre mot de passe doit contenir au moins une lettre majuscule",
+    "WEAK_PASSWORD_DIGITS": "Votre mot de passe doit contenir au moins un chiffre",
+    "WEAK_PASSWORD_SYMBOLS": "Votre mot de passe doit contenir au moins un caractère spécial comme :;?!+-.,^@",
+    "WEAK_PASSWORD_ONEOF": "Votre mot de passe est reconnu comme l'un des mots de passe les plus courants",
+    "MISSING_NAME": "Votre nom est requis",
+    "MISSING_EMAIL": "Votre email est requis",
+    "MISSING_PASSWORD": "Votre mot de passe est requis",
+    "MISSING_PASSWORD_CONFIRMATION": "La confirmation de votre mot de passe est requis",
+    "PASSWORD_CONFIRMATION_NOT_MATCH": "La confirmation du mot de passe doit correspondre au mot de passe",
+    "EMAIL_VALIDITY": "Votre email n'est pas valide",
+    "EMAIL_ALREADY_TAKEN": "Mail déjà utilisé !",
+    "REGISTER_ERROR": "Mauvaise données ou service indisponible, veuillez réessayer"
+  },
+  "ForgotPassword": {
+    "TITLE": "Réinitialiser mon mot de passe ?",
+    "MESSAGE": "Saisissez votre adresse email et nous vous enverrons un code pour réinitialiser votre mot de passe",
+    "EMAIL_FIELD_LABEL": "Saisissez votre adresse mail",
+    "MISSING_EMAIL": "Votre email est requis",
+    "EMAIL_VALIDITY": "Votre email n'est pas valide",
+    "ERROR_MESSAGE_DEFAULT": "Impossible d'envoyer le mail, merci de vérifier votre adresse et essayez à nouveau"
+  },
+  "ResetPassword": {
+    "TITLE": "Réinitialiser votre mot de passe ?",
+    "MESSAGE": "Saisissez votre nouveau mot de passe",
+    "RESEND_TOKEN": "Renvoyer un code de réinitialisation",
+    "EMAIL_FIELD_LABEL": "Saisissez votre adresse mail",
+    "PASSWORD_FIELD_LABEL": "Saisissez votre nouveau mot de passe",
+    "CONFIRM_PASSWORD_FIELD_LABEL": "Confirmez votre nouveau mot de passe",
+    "TOKEN_FIELD_LABEL": "Saisissez le code reçu par email",
+    "MISSING_EMAIL": "Votre email est requis",
+    "MISSING_PASSWORD": "Votre mot de passe est requis",
+    "MISSING_PASSWORD_CONFIRMATION": "La confirmation de votre mot de passe est requis",
+    "MISSING_TOKEN": "Le code reçu par email est requis",
+    "ERROR_TOKEN_LENGTH": "Le code reçu par e-mail doit contenir 6 chiffres",
+    "PASSWORD_CONFIRMATION_NOT_MATCH": "La confirmation du mot de passe doit correspondre au mot de passe",
+    "EMAIL_VALIDITY": "Votre email n'est pas valide",
+    "SUCCESS_MESSAGE": "Mot de passe réinitialisé, vous allez recevoir un mail de confirmation",
+    "ERROR_MESSAGE": "Impossible de réinitialiser votre mot de passe. Veuillez réessayer"
+  },
+  "DeleteAccountManager": {
+    "TITLE": "Supprimer mon compte",
+    "QUESTION": "Etes vous sûr de vourloir supprimer votre compte ?",
+    "CONFIRMATION_TITLE": "Attention: la suppression de votre compte est irrévocable et toutes les données qui y sont attachées seront perdues",
+    "CONFIRMATION": "Saisissez l'email' de votre compte pour confirmer la suprression",
+    "SUCCESS_MESSAGE": "Votre compte a été supprimé",
+    "ERROR_MESSAGE": "Impossible de supprimer votre compte, veuillez réessayer"
+  },
+  "VerifyEmailManager": {
+    "TITLE": "Vérifier mon adresse mail",
+    "HELP_LABEL": "Pourquoi dois-je vérifier mon adresse mail ?",
+    "HELP_TEXT": "Vérifier votre adresse mail améliore la sécurité de votre compte. Une fois que votre adresse mail est validée, vous serez en mesure d'apporter des changements à votre compte tels que votre mot de passe. Cela permet de nous aider pour protéger votre compte contre d'éventuels actes de piraterie.",
+    "HELP_EMAIL_LABEL": "Je n'ai jamais reçu de mail de vérification. Que dois-je faire ?",
+    "HELP_EMAIL_TEXT": "Si vous n'avez pas reçu de mail de vérification, assurez-vous que le mail n'a pas été filtré et déplacé dans les spams de votre messagerie. Merci d'ajouter dans vos contacts l'adresse {email} dans votre client de messagerie. Vous pouvez également cliquer sur le bouton ci-dessous pour recevoir un nouveau mail de vérification.",
+    "TOKEN_LABEL": "Saisissez le code reçu par email pour valider votre adresse mail",
+    "EMAIL_VERIFIED": "Votre adresse a été vérifié. Un mail vous a été envoyé pour confirmer le changement.",
+    "ACTION": "Me renvoyer un code de vérification",
+    "ERROR_MESSAGE": "Code invalide, demandez-en un nouveau",
+    "RESEND_TOKEN_SUCCESS": "Un nouveau code de vérification vous a été envoyé",
+    "RESEND_TOKEN_ERROR": "Nous n'avons pas pu vous envoyer un nouveau code de vérification. Si le problème persiste, veuillez nous contacter."
+  },
+  "PasswordManager": {
+    "TITLE": "Modifier mon mot de passe",
+    "PASSWORD_CHANGED": "Votre mot de passe a été modifié avec succés",
+    "OLD_PASSWORD_FIELD_LABEL": "Saisissez votre ancien mot de passe",
+    "PASSWORD_FIELD_LABEL": "Saisissez votre nouveau mot de passe",
+    "CONFIRM_PASSWORD_FIELD_LABEL": "Confirmez votre nouveau mot de passe",
+    "MISSING_OLD_PASSWORD": "Votre ancien mot de passe est requis",
+    "MISSING_PASSWORD": "Votre nouveau mot de passe est requis",
+    "MISSING_PASSWORD_CONFIRMATION": "La confirmation de votre nouveau mot de passe est requis",
+    "PASSWORD_CONFIRMATION_NOT_MATCH": "La confirmation du nouveau mot de passe doit correspondre au nouveau mot de passe",
+    "PASSWORD_ERROR_MESSAGE": "Les données que vous avez fournies ne nous ont pas permis de modifier votre mot de passe"
+
+  },
+  "EmailManager": {
+    "TITLE": "Modifier mon adresse mail",
+    "PASSWORD_FIELD_LABEL": "Saisissez votre mot de passe",
+    "EMAIL_FIELD_LABEL": "Saisissez votre nouvelle adresse mail",
+    "TOKEN_LABEL": "Pour valider votre nouvelle adresse mail, saisissez le code reçu par email",
+    "EMAIL_CHANGED": "Votre nouvelle adresse a été prise en compte. Un mail vous a été envoyé pour confirmer le changement.",
+    "ERROR_MESSAGE": "Code invalide",
+    "MISSING_PASSWORD": "Votre mot de passe est requis",
+    "MISSING_EMAIL": "Votre email est requis",
+    "EMAIL_VALIDITY": "Votre nouvelle adresse mail n'est pas valide"
   }
 }

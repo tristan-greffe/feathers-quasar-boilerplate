@@ -5,19 +5,15 @@ import express, {
   json,
   urlencoded,
   cors,
-  serveStatic,
   notFound,
   errorHandler
 } from '@feathersjs/express'
 import configuration from '@feathersjs/configuration'
 import socketio from '@feathersjs/socketio'
-
 import { logger } from './logger.js'
-import { logError } from './hooks/log-error.js'
 import { mongodb } from './mongodb.js'
-
 import { authentication } from './authentication.js'
-
+import history from 'connect-history-api-fallback'
 import { services } from './services/index.js'
 import { channels } from './channels.js'
 
@@ -28,9 +24,11 @@ app.configure(configuration())
 app.use(cors())
 app.use(json())
 app.use(urlencoded({ extended: true }))
-// Host the public folder
-app.use('/', serveStatic(app.get('public')))
+app.use(history())
 
+if (process.env.NODE_ENV === 'production') {
+  app.use('/', express.static(app.get('distPath')))
+}
 // Configure services and real-time functionality
 app.configure(rest())
 app.configure(
@@ -54,11 +52,13 @@ app.use(errorHandler({ logger }))
 // Register hooks that run on all service methods
 app.hooks({
   around: {
-    all: [logError]
+    all: []
   },
   before: {},
   after: {},
-  error: {}
+  error: {
+    all: []
+  }
 })
 // Register application setup and teardown hooks here
 app.hooks({

@@ -1,25 +1,65 @@
+var path = require('path')
+var fs = require('fs')
+var containerized = require('containerized')()
+
 const serverPort = process.env.PORT || 8081
-const domain = 'http://localhost:' + serverPort
+const clientPort = process.env.CLIENT_PORT || 8080
+const API_PREFIX = '/api'
+
+let domain
+// If we build a specific staging instance
+if (process.env.NODE_APP_INSTANCE === 'dev') {
+  domain = 'https://feathers-quasar-boilerplate.dev.tristan-code.xyz'
+} else if (process.env.NODE_APP_INSTANCE === 'test') {
+  domain = 'https://feathers-quasar-boilerplate.test.tristan-code.xyz'
+} else if (process.env.NODE_APP_INSTANCE === 'prod') {
+  domain = 'https://feathers-quasar-boilerplate.tristan-code.xyz'
+} else {
+  // Otherwise we are on a developer machine
+  if (process.env.NODE_ENV === 'development') {
+    domain = 'http://localhost:' + clientPort
+  } else {
+    domain = 'http://localhost:' + serverPort
+  }
+}
 
 module.exports = {
+  origins: [ domain ],
+  apiPath: API_PREFIX,
+  paginate: { default: 10, max: 50 },
+  mongodb: containerized ? 'mongodb://mongodb:27017/feathers-quasar-boilerplate' : 'mongodb://127.0.0.1:27017/feathers-quasar-boilerplate',
   host: process.env.HOSTNAME || 'localhost',
   port: serverPort,
-  public: './public',
-  origins: [
-    domain
-  ],
-  paginate: {
-    default: 10,
-    max: 50
+  distPath: fs.existsSync(path.join(__dirname, '../../dist/pwa')) ? path.join(__dirname, '../../dist/pwa') : path.join(__dirname, '../../dist/spa'),
+  passwordPolicy: {
+    minLength: 8,
+    maxLength: 128,
+    uppercase: true,
+    lowercase: true,
+    digits: true,
+    symbols: true,
+    prohibited: fs.readFileSync(path.join(__dirname, '10k_most_common_passwords.txt')).toString().split('\n')
   },
-  mongodb: 'mongodb://127.0.0.1:27017/feathers-quasar-boilerplate',
+  mailer: {
+    service: 'gmail',
+    auth: {
+      user: process.env.GOOGLE_MAIL_USER,
+      pass: process.env.GOOGLE_MAIL_PASWORD
+    },
+    templateDir: path.join(__dirname, 'email-templates')
+  },
+  proxyTable: {},
+  domain,
+  public: './public',
   authentication: {
     secret: process.env.APP_SECRET || 'my secret',
-    service: 'users',
+    service: API_PREFIX + '/users',
+    path: API_PREFIX + '/authentication',
     entity: 'user',
     authStrategies: [
       'jwt',
-      'local'
+      'local',
+      'google'
     ],
     local: {
       usernameField: 'email',
@@ -38,12 +78,6 @@ module.exports = {
         key: process.env.GOOGLE_CLIENT_ID,
         secret: process.env.GOOGLE_CLIENT_SECRET,
       },
-    },
-    defaultUsers: [
-      {
-        email: 'test@gmail.com',
-        password: 'Pass;word1',
-      }
-    ],
+    }
   }
 }
