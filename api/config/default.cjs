@@ -30,6 +30,9 @@ module.exports = {
   mongodb: containerized ? 'mongodb://mongodb:27017/feathers-quasar-boilerplate' : 'mongodb://127.0.0.1:27017/feathers-quasar-boilerplate',
   host: process.env.HOSTNAME || 'localhost',
   port: serverPort,
+  bodyParser: {
+    json: { limit: 10 * 1024 * 1024 } // 10MB
+  },
   distPath: fs.existsSync(path.join(__dirname, '../../dist/pwa')) ? path.join(__dirname, '../../dist/pwa') : path.join(__dirname, '../../dist/spa'),
   passwordPolicy: {
     minLength: 8,
