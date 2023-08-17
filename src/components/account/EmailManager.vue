@@ -20,7 +20,7 @@
         @click="request" 
       />
     </q-card-actions>
-    <q-dialog v-model="dialog" persistent>
+    <q-dialog v-model="dialog">
       <q-card>
         <!-- Form -->
         <q-card-section align="center">

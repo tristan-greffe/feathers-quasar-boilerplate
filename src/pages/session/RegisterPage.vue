@@ -9,7 +9,7 @@
       />
     </template>
     <template v-slot:card-action>
-      <q-btn :loading="loading" color="primary" :label="$t('Register.REGISTER_LABEL')" @click="onSubmit" />
+      <q-btn :loading="loading" color="primary" :label="$t('Register.REGISTER_LABEL')" @click="onSubmit" id="register-button" />
     </template>
     <template v-slot:card-footer>
       <div class="row items-center q-pa-none justify-center" direction="horizontal" id="frame-actions">

@@ -11,10 +11,10 @@
       :disable="draggingFab"
       v-touch-pan.prevent.mouse="moveFab"
     >
-      <q-fab-action @click="logout" color="primary" icon="las la-sign-out-alt" :disable="draggingFab" >
+      <q-fab-action @click="logout" id="logout" color="primary" icon="las la-sign-out-alt" :disable="draggingFab" >
         <q-tooltip class="bg-accent">{{ $t('Tooltip.LOGOUT') }}</q-tooltip>
       </q-fab-action> 
-      <q-fab-action @click="showModal = !showModal" color="primary" icon="las la-cog" :disable="draggingFab" >
+      <q-fab-action @click="showModal = !showModal" id="manage-account" color="primary" icon="las la-cog" :disable="draggingFab" >
         <q-tooltip class="bg-accent">{{ $t('Tooltip.MANAGE_ACCOUNT') }}</q-tooltip>
       </q-fab-action> 
     </q-fab>

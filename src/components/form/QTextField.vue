@@ -1,6 +1,7 @@
 <template>
   <q-input
     :id="properties.id + '-field'"
+    :for="properties.id + '-field'"
     type="'text'"
     :autocomplete="properties.autocomplete ? properties.autocomplete : 'off'"
     clearable

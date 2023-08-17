@@ -1,6 +1,7 @@
 <template>
   <q-input
     :id="properties.id + '-field'"
+    :for="properties.id + '-field'"
     :type="showPassword ? 'password' : 'text'"
     clearable
     :label="$t(properties.label)"

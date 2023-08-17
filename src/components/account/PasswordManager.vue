@@ -45,7 +45,7 @@ const fields = ref([
     autocomplete: 'new-password'
   },
   {
-    id: 'password',
+    id: 'newPassword',
     label: 'PasswordManager.PASSWORD_FIELD_LABEL',
     component: 'QPasswordField',
     autocomplete: 'new-password'
@@ -61,7 +61,7 @@ const fields = ref([
 // Functions
 async function onFieldChanged (field, value) {
   if (field === 'oldPassword') values.value.oldPassword = value
-  else if (field === 'password') values.value.password = value
+  else if (field === 'newPassword') values.value.password = value
   else if (field === 'passwordConfirmation') values.value.passwordConfirmation = value
 }
 async function hasError () {
