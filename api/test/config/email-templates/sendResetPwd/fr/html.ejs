@@ -1,0 +1,11 @@
+<h1>[Boilerplate] Réinitialisez votre mot de passe</h1>
+
+<p>Bonjour <%= user.name %>, nous avons eu une requête pour réinitialiser le mot de passe associé à votre mail <%= user.email %>.</p>
+
+<p>Utilisez le code de vérification ci-dessous pour réinitialiser votre mot de passe.</p>
+
+<p><strong><%= user.resetShortToken %></strong></p>
+
+<p>Si vous n'êtes pas à l'origine de cette requête envoyez-nous un mail en cliquant sur <a href="mailto:boilerplate.js@gmail.com?subject=Je n'ai pas demandé à réinitialiser mon mot de passe&body=Quelqu'un non autorisé a demandé à réinitialiser mon mot de passe.">ce lien</a>.</p>
+
+
