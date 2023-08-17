@@ -1,13 +1,98 @@
-# [Feathers](https://feathersjs.com/) [Quasar](https://quasar.dev/) Boilerplate
 
-[![Documentation](https://img.shields.io/badge/documentation-available-brightgreen.svg)](https://tristan-greffe.github.io/feathers-quasar-boilerplate/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+<div align="center">
 
-## Documentation
+  ![Project Banner](./readme_assets/readme_banner.png)
 
-The full documentation is available [here](https://tristan-greffe.github.io/feathers-quasar-boilerplate/)
+  <p>Feathers Quasar Boilerplate</p>
 
-> The documentation website is generated using [VuePress](https://vuepress.vuejs.org/)
+  <p>
+    <a href="https://codeclimate.com/github/tristan-greffe/feathers-quasar-boilerplate/coverage">
+      <img src="https://codeclimate.com/github/tristan-greffe/feathers-quasar-boilerplate/badges/coverage.svg" alt="awesome" />
+    </a>
+    <a href="https://github.com/tristan-greffe/feathers-quasar-boilerplate/stargazers">
+      <img src="https://img.shields.io/github/stars/tristan-greffe/feathers-quasar-boilerplate" alt="stars" />
+    </a>
+    <a href="https://github.com/tristan-greffe/feathers-quasar-boilerplate/blob/master/LICENSE">
+      <img src="https://img.shields.io/github/license/tristan-greffe/feathers-quasar-boilerplate.svg" alt="license" />
+    </a>
+  </p>
+
+ <h4>
+    <a href="https://github.com/tristan-greffe/feathers-quasar-boilerplate/issues/">Report Bug</a>
+    <span> · </span>
+    <a href="https://github.com/tristan-greffe/feathers-quasar-boilerplate/issues/">Request Feature</a>
+  </h4>
+
+</div>
+
+## About the Project
+
+<div align="center">
+  <img src="./readme_assets/boilerplate.png" height="auto" width="90%"/>
+</div>
+
+This boilerplate, inspired by [Kalisio](https://github.com/kalisio), is an application based on the [FeathersJS](https://feathersjs.com/) & [QuasarJS](https://quasar.dev/) frameworks for visualizing weather data in real time.
+
+### Features
+
+1. Weather data visualization with [OpenWeathers](https://openweathermap.org/)
+
+2. Interactive map: the interactive map is based on [Leaflet](https://leafletjs.com/), a powerful mapping framework.
+
+## Getting Started
+### Installing
+
+```sh
+git clone https://github.com/tristan-greffe/feathers-quasar-boilerplate.git
+
+// Run the server/API
+cd feathers-quasar-boilerplate/api
+yarn install
+yarn dev
+
+// In another terminal run the client app
+cd feathers-quasar-boilerplate
+yarn install
+yarn dev
+```
+
+### Testing
+
+#### API
+From the root folder run the server-side tests:
+
+```sh
+$yarn test:server
+```
+⚠️ To run the server-side tests, the server must not be running.
+
+#### Client
+From the root folder run the client-side tests:
+
+```sh
+$yarn test:client
+```
+
+⚠️ To run the client-side tests, you must first run the web app.
+
+## Contributing
+
+Contributions are always welcome!
+
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+Don't forget to give the project a star! Thanks again!
+
+1. Fork it! 🤙
+
+2. Create your feature branch: `git checkout -b my-new-feature`
+
+3. Commit your changes: `git commit -m "Add some feature"`
+
+4. Push to the branch: `git push origin my-new-feature`
+
+5. Submit a pull request 👍
 
 ## License
 
