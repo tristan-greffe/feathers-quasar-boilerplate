@@ -45,7 +45,6 @@ async function onDelete () {
     }
   }).onOk(async (data) => {
     try {
-      console.log(User._id)
       await api.service('api/users').remove(User._id)
       useStore().setUser({})
       $q.notify({
