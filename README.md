@@ -9,6 +9,9 @@
     <a href="https://codeclimate.com/github/tristan-greffe/feathers-quasar-boilerplate/coverage">
       <img src="https://codeclimate.com/github/tristan-greffe/feathers-quasar-boilerplate/badges/coverage.svg" alt="awesome" />
     </a>
+    <a href="https://codeclimate.com/github/tristan-greffe/feathers-quasar-boilerplate">
+      <img src="https://codeclimate.com/github/tristan-greffe/feathers-quasar-boilerplate/badges/gpa.svg" alt="awesome" />
+    </a>
     <a href="https://github.com/tristan-greffe/feathers-quasar-boilerplate/stargazers">
       <img src="https://img.shields.io/github/stars/tristan-greffe/feathers-quasar-boilerplate" alt="stars" />
     </a>
