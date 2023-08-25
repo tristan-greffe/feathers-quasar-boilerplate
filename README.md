@@ -7,10 +7,10 @@
 
   <p>
     <a href="https://codeclimate.com/github/tristan-greffe/feathers-quasar-boilerplate/coverage">
-      <img src="https://codeclimate.com/github/tristan-greffe/feathers-quasar-boilerplate/badges/coverage.svg" alt="awesome" />
+      <img src="https://codeclimate.com/github/tristan-greffe/feathers-quasar-boilerplate/badges/coverage.svg" alt="coverage" />
     </a>
     <a href="https://codeclimate.com/github/tristan-greffe/feathers-quasar-boilerplate">
-      <img src="https://codeclimate.com/github/tristan-greffe/feathers-quasar-boilerplate/badges/gpa.svg" alt="awesome" />
+      <img src="https://codeclimate.com/github/tristan-greffe/feathers-quasar-boilerplate/badges/gpa.svg" alt="maintainability" />
     </a>
     <a href="https://github.com/tristan-greffe/feathers-quasar-boilerplate/stargazers">
       <img src="https://img.shields.io/github/stars/tristan-greffe/feathers-quasar-boilerplate" alt="stars" />
@@ -43,7 +43,17 @@ This boilerplate, inspired by [Kalisio](https://github.com/kalisio), is an appli
 2. Interactive map: the interactive map is based on [Leaflet](https://leafletjs.com/), a powerful mapping framework.
 
 ## Getting Started
-### Installing
+
+### Step 1: set the required environment variables
+
+| ENV | Description | Required |
+|---|---|---|
+| `GMAIL_USER` | Email used for gmail account | yes |
+| `GMAIL_PASWORD` |  Password for gmail account | yes |
+| `GOOGLE_CLIENT_ID` | Customer ID for google authentication | no |
+| `GOOGLE_CLIENT_SECRET` | Customer secret key for google authentication | no |
+
+### Step 2: installing
 
 ```sh
 git clone https://github.com/tristan-greffe/feathers-quasar-boilerplate.git
