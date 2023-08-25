@@ -44,7 +44,9 @@ This boilerplate, inspired by [Kalisio](https://github.com/kalisio), is an appli
 
 ## Getting Started
 
-### Step 1: set the required environment variables
+### Installing
+
+#### Step 1: set the required environment variables
 
 | ENV | Description | Required |
 |---|---|---|
@@ -53,7 +55,7 @@ This boilerplate, inspired by [Kalisio](https://github.com/kalisio), is an appli
 | `GOOGLE_CLIENT_ID` | Customer ID for google authentication | no |
 | `GOOGLE_CLIENT_SECRET` | Customer secret key for google authentication | no |
 
-### Step 2: installing
+#### Step 2: installing
 
 ```sh
 git clone https://github.com/tristan-greffe/feathers-quasar-boilerplate.git
