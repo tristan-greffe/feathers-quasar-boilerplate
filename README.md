@@ -1,9 +1,9 @@
 
 <div align="center">
-
+  
+  <h1>Feathers Quasar Boilerplate</h1>
+  
   ![Project Banner](./readme_assets/readme_banner.png)
-
-  <p>Feathers Quasar Boilerplate</p>
 
   <p>
     <a href="https://codeclimate.com/github/tristan-greffe/feathers-quasar-boilerplate/coverage">
@@ -34,7 +34,7 @@
   <img src="./readme_assets/boilerplate.png" height="auto" width="90%"/>
 </div>
 
-This boilerplate, inspired by [Kalisio](https://github.com/kalisio), is an application based on the [FeathersJS](https://feathersjs.com/) & [QuasarJS](https://quasar.dev/) frameworks for visualizing weather data in real time.
+This boilerplate, inspired by [Kalisio](https://github.com/kalisio), is an application based on the **[FeathersJS](https://feathersjs.com/)** & **[QuasarJS](https://quasar.dev/)** frameworks for visualizing weather data in real time.
 
 ### Features
 
