@@ -46,8 +46,8 @@ module.exports = {
   mailer: {
     service: 'gmail',
     auth: {
-      user: process.env.GOOGLE_MAIL_USER,
-      pass: process.env.GOOGLE_MAIL_PASWORD
+      user: process.env.GMAIL_USER,
+      pass: process.env.GMAIL_PASWORD
     },
     templateDir: path.join(__dirname, 'email-templates')
   },
