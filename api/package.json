@@ -54,7 +54,7 @@
     "feathers-authentication-management": "^4.0.2",
     "feathers-hooks-common": "^8.0.0",
     "feathers-mailer": "^4.1.1",
-    "mongodb": "^5.2.0"
+    "mongodb": "^5.8.0"
   },
   "devDependencies": {
     "c8": "^8.0.1",
