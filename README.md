@@ -42,6 +42,8 @@ This boilerplate, inspired by [Kalisio](https://github.com/kalisio), is an appli
 
 2. Interactive map: the interactive map is based on [Leaflet](https://leafletjs.com/), a powerful mapping framework.
 
+3. Full authentication with [feathers-authentication-management](https://feathers-a-m.netlify.app/)
+
 ## Getting Started
 
 ### Installing
