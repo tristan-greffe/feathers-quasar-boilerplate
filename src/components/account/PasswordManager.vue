@@ -31,7 +31,6 @@ import { changePassword } from '../../utils/utils.account'
 import { useStore } from '../../boot/store'
 import QForm from '../../components/form/QForm.vue'
 
-
 // Data
 const $q = useQuasar()
 const User = useStore().getUser
@@ -98,7 +97,6 @@ async function apply () {
       message: i18n.t('PasswordManager.PASSWORD_CHANGED')
     })
   } catch (error) {
-    console.log(error)
     loading.value = false
     $q.notify({
       type: 'negative',

@@ -24,7 +24,6 @@ import QTextField from './QTextField.vue'
 import QPasswordField from './QPasswordField.vue'
 import QTokenField from './QTokenField.vue'
 
-
 // Props
 const props = defineProps(['fields'])
 
