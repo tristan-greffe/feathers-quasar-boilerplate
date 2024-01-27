@@ -1,6 +1,6 @@
 var path = require('path')
 var fs = require('fs')
-var containerized = require('containerized')()
+// var containerized = require('containerized')()
 
 const serverPort = process.env.PORT || 8081
 const clientPort = process.env.CLIENT_PORT || 8080
@@ -9,7 +9,8 @@ const API_PREFIX = '/api'
 let domain
 // If we build a specific staging instance
 if (process.env.NODE_APP_INSTANCE === 'dev') {
-  domain = 'https://feathers-quasar-boilerplate.dev.tristan-code.xyz'
+  // domain = 'https://feathers-quasar-boilerplate.dev.tristan-code.xyz'
+  domain = 'http://localhost:' + serverPort
 } else if (process.env.NODE_APP_INSTANCE === 'test') {
   domain = 'https://feathers-quasar-boilerplate.test.tristan-code.xyz'
 } else if (process.env.NODE_APP_INSTANCE === 'prod') {
