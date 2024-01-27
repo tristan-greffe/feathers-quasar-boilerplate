@@ -1,6 +1,6 @@
 var path = require('path')
 var fs = require('fs')
-// var containerized = require('containerized')()
+var containerized = require('containerized')()
 
 const serverPort = process.env.PORT || 8081
 const clientPort = process.env.CLIENT_PORT || 8080
