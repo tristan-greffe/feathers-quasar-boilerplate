@@ -1,6 +1,6 @@
 var path = require('path')
 var fs = require('fs')
-var containerized = require('containerized')()
+// var containerized = require('containerized')()
 
 const serverPort = process.env.PORT || 8081
 const API_PREFIX = '/api'
@@ -8,7 +8,7 @@ const API_PREFIX = '/api'
 module.exports = {
   apiPath: API_PREFIX,
   paginate: { default: 10, max: 50 },
-  mongodb: containerized ? 'mongodb://mongodb:27017/feathers-quasar-boilerplate' : 'mongodb://127.0.0.1:27017/feathers-quasar-boilerplate',
+  mongodb: 'mongodb://127.0.0.1:27017/feathers-quasar-boilerplate',
   host: process.env.HOSTNAME || 'localhost',
   port: serverPort,
   distPath: fs.existsSync(path.join(__dirname, '../../dist/pwa')) ? path.join(__dirname, '../../dist/pwa') : path.join(__dirname, '../../dist/spa'),
