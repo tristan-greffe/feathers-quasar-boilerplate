@@ -14,7 +14,7 @@ jobs:
         run: |
           cd api
           yarn
-          yarn test:server
+          yarn test
         env:
           GMAIL_USER: ${{ secrets.GMAIL_USER }}
           GMAIL_PASWORD: ${{ secrets.GMAIL_PASWORD }}
