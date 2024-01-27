@@ -23,7 +23,7 @@ describe('core:services', () => {
     const bodyParserConfig = app.get('bodyParser')
     app.use(express.json(_.get(bodyParserConfig, 'json')))
     app.configure(rest())
-    app.configure(mongodb)
+    await mongodb(app)
     app.configure(authentication)
     port = app.get('port')
     baseUrl = `http://localhost:${port}${app.get('apiPath')}`
@@ -167,6 +167,11 @@ describe('core:services', () => {
 
   // Cleanup
   after(async () => {
+    const mongoClient = app.get('mongodbClient')
+
+    if (mongoClient) {
+      await mongoClient.client.close()
+    }
     if (server) await server.close()
   })
 })

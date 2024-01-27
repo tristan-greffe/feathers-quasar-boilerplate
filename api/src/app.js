@@ -41,7 +41,7 @@ export async function runApplication () {
   )
   app.configure(authentication)
   // Connect to DB
-  app.configure(mongodb)
+  await mongodb(app)
   // Set services (see `services/index.js`)
   app.configure(services)
   // Set up real-time event channels
