@@ -101,7 +101,7 @@ describe('core:services', () => {
   // Let enough time to process
     .timeout(20000)
 
-  it('creates a user', async (done) => {
+  it('creates a user', async () => {
     const user = await userService.create({
       email: 'test@test.org',
       password: 'Pass;word1',
@@ -115,7 +115,7 @@ describe('core:services', () => {
     expect(users.data[0].isVerified).to.equal(false)
     expect(users.data[0].email).toExist()
     expect(users.data[0].email).to.equal('test@test.org')
-    done()
+    return Promise.resolve()
   })
   // Let enough time to process
     .timeout(20000)
