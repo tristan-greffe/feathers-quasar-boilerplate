@@ -19,13 +19,3 @@ jobs:
           cd api
           yarn
           yarn test
-        env:
-          GMAIL_USER: ${{ secrets.GMAIL_USER }}
-          GMAIL_PASWORD: ${{ secrets.GMAIL_PASWORD }}
-      - name: Publish code coverage
-        uses: paambaati/codeclimate-action@v5.0.0
-        env:
-          CC_TEST_REPORTER_ID: ce7b70a1429216c395464c7031e47ed2a99b93ca17b8f08ba1396eb670fbc5a9
-        with:
-          coverageLocations: |
-            ${{github.workspace}}/api/coverage
