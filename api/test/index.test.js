@@ -102,12 +102,16 @@ describe('core:services', () => {
     .timeout(20000)
 
   it('creates a user', async () => {
+    function sleep (ms) {
+      return new Promise(resolve => setTimeout(resolve, ms))
+    }
     userService.create({
       email: 'test@test.org',
       password: 'Pass;word1',
       name: 'test-user'
     })
     const users = await userService.find({ query: { email: 'test@test.org' } })
+    await sleep(2000)
     userObject = users.data[0]
     expect(users.data.length > 0).beTrue()
     expect(users.data[0].name).toExist()
