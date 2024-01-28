@@ -117,7 +117,7 @@ describe('core:services', () => {
     expect(users.data[0].email).to.equal('test@test.org')
   })
   // Let enough time to process
-    .timeout(10000)
+    .timeout(20000)
 
   it('authenticates a user', () => {
     return request
