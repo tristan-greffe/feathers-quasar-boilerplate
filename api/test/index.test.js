@@ -112,6 +112,7 @@ describe('core:services', () => {
     })
     const users = await userService.find({ query: { email: 'test@test.org' } })
     await sleep(2000)
+    console.log(users.data)
     userObject = users.data[0]
     expect(users.data.length > 0).beTrue()
     expect(users.data[0].name).toExist()
