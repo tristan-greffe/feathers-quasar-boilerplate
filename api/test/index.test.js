@@ -101,23 +101,20 @@ describe('core:services', () => {
   // Let enough time to process
     .timeout(20000)
 
-  it('creates a user', () => {
-    return userService.create({
+  it('creates a user', async () => {
+    const user = await userService.create({
       email: 'test@test.org',
       password: 'Pass;word1',
       name: 'test-user'
-    }).then(user => {
-      userObject = user
-      return userService.find({ query: { email: 'test@test.org' } })
     })
-      .then(users => {
-        expect(users.data.length > 0).beTrue()
-        expect(users.data[0].name).toExist()
-        expect(users.data[0].name).to.equal('test-user')
-        expect(users.data[0].isVerified).to.equal(false)
-        expect(users.data[0].email).toExist()
-        expect(users.data[0].email).to.equal('test@test.org')
-      })
+    userObject = user
+    const users = userService.find({ query: { email: 'test@test.org' } })
+    expect(users.data.length > 0).beTrue()
+    expect(users.data[0].name).toExist()
+    expect(users.data[0].name).to.equal('test-user')
+    expect(users.data[0].isVerified).to.equal(false)
+    expect(users.data[0].email).toExist()
+    expect(users.data[0].email).to.equal('test@test.org')
   })
   // Let enough time to process
     .timeout(10000)
