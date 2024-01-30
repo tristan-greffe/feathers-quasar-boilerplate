@@ -6,9 +6,6 @@
   ![Project Banner](./readme_assets/readme_banner.png)
 
   <p>
-    <a href="https://codeclimate.com/github/tristan-greffe/feathers-quasar-boilerplate/coverage">
-      <img src="https://codeclimate.com/github/tristan-greffe/feathers-quasar-boilerplate/badges/coverage.svg" alt="coverage" />
-    </a>
     <a href="https://codeclimate.com/github/tristan-greffe/feathers-quasar-boilerplate">
       <img src="https://codeclimate.com/github/tristan-greffe/feathers-quasar-boilerplate/badges/gpa.svg" alt="maintainability" />
     </a>
@@ -46,9 +43,7 @@ This boilerplate, inspired by [Kalisio](https://github.com/kalisio), is an appli
 
 ## Getting Started
 
-### Installing
-
-#### Step 1: set the required environment variables
+### Step 1: set the required environment variables
 
 | ENV | Description | Required |
 |---|---|---|
@@ -57,7 +52,9 @@ This boilerplate, inspired by [Kalisio](https://github.com/kalisio), is an appli
 | `GOOGLE_CLIENT_ID` | Customer ID for google authentication | no |
 | `GOOGLE_CLIENT_SECRET` | Customer secret key for google authentication | no |
 
-#### Step 2: installing
+### Step 2: installing
+
+#### From source code
 
 ```sh
 git clone https://github.com/tristan-greffe/feathers-quasar-boilerplate.git
@@ -73,6 +70,30 @@ yarn install
 yarn dev
 ```
 
+> [!NOTE]
+> Then point your browser to localhost:8080
+
+#### Using Docker
+
+```bash
+// Retrieve the latest available dev tag
+docker pull codask/feathers-quasar-boilerplate:dev
+
+// Run the MongoDB and feathers-quasar-boilerplate containers
+docker-compose up -d
+
+// Stop the MongoDB and feathers-quasar-boilerplate containers
+docker-compose down
+
+// Stop the MongoDB and feathers-quasar-boilerplate containers erasing DB data
+docker-compose down -v
+```
+
+https://github.com/tristan-greffe/feathers-quasar-boilerplate/blob/26a862bf54163d6cadf90ee97f37f36ea01d5c60/readme_assets/docker-compose.yml#L1-L26
+
+> [!NOTE]
+> Then point your browser to localhost:8081
+
 ### Testing
 
 #### API
@@ -81,7 +102,9 @@ From the root folder run the server-side tests:
 ```sh
 $yarn test:server
 ```
-⚠️ To run the server-side tests, the server must not be running.
+
+> [!IMPORTANT]
+> To run the server-side tests, the server must not be running.
 
 #### Client
 From the root folder run the client-side tests:
@@ -90,7 +113,8 @@ From the root folder run the client-side tests:
 $yarn test:client
 ```
 
-⚠️ To run the client-side tests, you must first run the web app.
+> [!IMPORTANT]
+> To run the client-side tests, you must first run the web app.
 
 ## Contributing
 
