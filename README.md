@@ -33,6 +33,10 @@
 
 This boilerplate, inspired by [Kalisio](https://github.com/kalisio), is an application based on the **[FeathersJS](https://feathersjs.com/)** & **[QuasarJS](https://quasar.dev/)** frameworks for visualizing weather data in real time.
 
+### Tech Stack
+
+[![My Skills](https://skillicons.dev/icons?i=js,vue,mongo,docker)](https://skillicons.dev)
+
 ### Features
 
 1. Weather data visualization with [OpenWeathers](https://openweathermap.org/)
