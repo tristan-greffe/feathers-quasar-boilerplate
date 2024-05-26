@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "feathers-quasar-boilerplate.fullname" . }}
+  namespace: {{ .Values.namespace }}
+  labels:
+    {{- include "feathers-quasar-boilerplate.labels" . | nindent 4 }}
+spec:
+  {{- if not .Values.feathersQuasarBoilerplate.autoscaling.enabled }}
+  replicas: {{ .Values.feathersQuasarBoilerplate.autoscaling.replicaCount }}
+  {{- end }}
+  selector:
+    matchLabels:
+      {{- include "feathers-quasar-boilerplate.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "feathers-quasar-boilerplate.selectorLabels" . | nindent 8 }}
+    spec:
+      serviceAccountName: {{ include "feathers-quasar-boilerplate.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.feathersQuasarBoilerplate.autoscaling.podSecurityContext | nindent 8 }}
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.feathersQuasarBoilerplate.image.repository }}:{{ .Values.feathersQuasarBoilerplate.image.tag | default .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.feathersQuasarBoilerplate.image.pullPolicy }}

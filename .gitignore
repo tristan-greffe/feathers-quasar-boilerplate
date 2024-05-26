@@ -36,3 +36,7 @@ yarn-error.log*
 coverage
 server-coverage
 client-coverage
+
+# Helm dependencies
+*.tgz
+*.lock

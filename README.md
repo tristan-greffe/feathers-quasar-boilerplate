@@ -35,7 +35,7 @@ This boilerplate, inspired by [Kalisio](https://github.com/kalisio), is an appli
 
 ### Tech Stack
 
-[![My Skills](https://skillicons.dev/icons?i=js,vue,mongo,docker,yarn)](https://skillicons.dev)
+[![My Skills](https://skillicons.dev/icons?i=js,vue,mongo,yarn,docker,kubernetes)](https://skillicons.dev)
 
 ### Features
 

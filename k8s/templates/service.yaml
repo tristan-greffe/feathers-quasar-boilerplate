@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "feathers-quasar-boilerplate.fullname" . }}
+  labels:
+    {{- include "feathers-quasar-boilerplate.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.feathersQuasarBoilerplate.service.type }}
+  ports:
+    - port: {{ .Values.feathersQuasarBoilerplate.service.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    {{- include "feathers-quasar-boilerplate.selectorLabels" . | nindent 4 }}

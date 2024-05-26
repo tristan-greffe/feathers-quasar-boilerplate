@@ -1,0 +1,49 @@
+#################################################
+## Feathers Quasar Boilerplate Helm task settings
+#################################################
+
+#####################
+## Global settings
+#####################
+
+repository:
+  url: codask/feathers-quasar-boilerplate
+
+namespace: dev
+
+serviceAccount:
+  create: false
+  
+#####################
+## Databases settings
+#####################
+
+mongodb:
+  enabled: true
+  auth: 
+    enabled: false
+
+#####################
+## App settings
+#####################
+
+feathersQuasarBoilerplate:
+  image:
+    repository: codask/feathers-quasar-boilerplate
+    tag: dev
+    pullPolicy: IfNotPresent
+  # replicatCount is the number of replicas
+  replicaCount: 1
+  autoscaling:
+    enabled: false
+  # default security context, run as non root uid 1000
+  podSecurityContext:
+    runAsNonRoot: true
+    runAsUser: 1000
+  # expose the service on a node port 8081
+  service:
+    enabled: true
+    type: NodePort
+    port: 8081                                                           
+    annotations: {}
+
