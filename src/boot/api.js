@@ -10,7 +10,7 @@ function createClient (config) {
   const api = feathers()
 
   // Configure transport
-  const origin = config.origin
+  const origin = window.location.href
   if (config.transport === 'http') {
     api.transporter = rest(origin).fetch(window.fetch.bind(window))
     api.configure(api.transporter)

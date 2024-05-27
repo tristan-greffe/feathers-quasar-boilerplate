@@ -13,15 +13,19 @@ namespace: dev
 
 serviceAccount:
   create: false
-  
+
 #####################
 ## Databases settings
 #####################
 
 mongodb:
   enabled: true
+  useStatefulSet: true
   auth: 
     enabled: false
+  fullnameOverride: mongodb
+  service:
+    port: 27017
 
 #####################
 ## App settings
@@ -31,7 +35,7 @@ feathersQuasarBoilerplate:
   image:
     repository: codask/feathers-quasar-boilerplate
     tag: dev
-    pullPolicy: IfNotPresent
+    pullPolicy: Always
   # replicatCount is the number of replicas
   replicaCount: 1
   autoscaling:
@@ -44,6 +48,7 @@ feathersQuasarBoilerplate:
   service:
     enabled: true
     type: NodePort
-    port: 8081                                                           
+    port: 8081
+    nodePort: 30949                                                       
     annotations: {}
 
