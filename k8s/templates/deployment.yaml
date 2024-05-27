@@ -24,3 +24,6 @@ spec:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.feathersQuasarBoilerplate.image.repository }}:{{ .Values.feathersQuasarBoilerplate.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.feathersQuasarBoilerplate.image.pullPolicy }}
+          env:
+            - name: MONGODB_URL
+              value: mongodb://mongodb:27017/feathers-quasar-boilerplate

@@ -28,7 +28,7 @@ module.exports = {
   origins: [ domain ],
   apiPath: API_PREFIX,
   paginate: { default: 10, max: 50 },
-  mongodb: containerized ? 'mongodb://mongodb:27017/feathers-quasar-boilerplate' : 'mongodb://127.0.0.1:27017/feathers-quasar-boilerplate',
+  mongodb: process.env.MONGODB_URL || 'mongodb://127.0.0.1:27017/feathers-quasar-boilerplate',
   host: process.env.HOSTNAME || 'localhost',
   port: serverPort,
   bodyParser: {
