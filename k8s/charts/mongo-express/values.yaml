@@ -1,0 +1,36 @@
+# mongo-express default values
+
+global:
+  subdomain: ""
+  certIssuer: ""
+  secret: ""
+
+commonAnnotations: {}
+commonLabel: {}
+
+replicaCount: 1
+
+image:
+  repository: mongo-express
+  tag: "latest"
+  pullPolicy: IfNotPresent
+
+forceRestart: false
+
+service:
+  enabled: true
+  type: NodePort
+  port: 8081
+  annotations: {}
+
+ingress:
+  enabled: false
+  className: nginx
+
+containerPort: 8081
+
+resources: {}
+
+podSecurityContext:
+  runAsNonRoot: true
+  runAsUser: 1000

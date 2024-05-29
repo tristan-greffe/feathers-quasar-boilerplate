@@ -77,26 +77,17 @@ yarn dev
 > [!NOTE]
 > Then point your browser to localhost:8080
 
-#### Using Docker
+#### Using minikube
 
-```bash
-// Retrieve the latest available dev tag
-docker pull codask/feathers-quasar-boilerplate:dev
-
-// Run the MongoDB and feathers-quasar-boilerplate containers
-docker-compose up -d
-
-// Stop the MongoDB and feathers-quasar-boilerplate containers
-docker-compose down
-
-// Stop the MongoDB and feathers-quasar-boilerplate containers erasing DB data
-docker-compose down -v
+```sh
+minikube start
+cd k8s
+./install.sh
 ```
 
-https://github.com/tristan-greffe/feathers-quasar-boilerplate/blob/26a862bf54163d6cadf90ee97f37f36ea01d5c60/readme_assets/docker-compose.yml#L1-L26
-
 > [!NOTE]
-> Then point your browser to localhost:8081
+> Then point your browser to http://<minikube ip>/30001
+> Then point your browser to http://<minikube ip>/30000
 
 ### Testing
 
