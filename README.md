@@ -79,15 +79,45 @@ yarn dev
 
 #### Using minikube
 
-```sh
-minikube start
-cd k8s
-./install.sh
-```
+##### Requirements
+
+- [Minikube](https://minikube.sigs.k8s.io/docs/start/)
+- [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
+- [Helm](https://helm.sh/docs/intro/install/)
+
+##### Getting started
+
+1. **Start Minikube** :
+   ```sh
+   minikube start
+   ```
+
+2. **Navigate to `k8s` directory** :
+   ```sh
+   cd k8s
+   ```
+
+3. **Run the installation script** :
+   ```sh
+   ./install.sh
+   ```
+
+##### Accessing applications
+
+- **Feathers Quasar Boilerplate** :
+  - Open your browser and go to : `http://<minikube-ip>:30001`
+  
+- **Mongo Express** :
+  - Open your browser and go to : `http://<minikube-ip>:30000`
+  - Authentication :
+    - Username : `admin`
+    - Password : `admin`
 
 > [!NOTE]
-> Then point your browser to http://<minikube ip>/30001
-> Then point your browser to http://<minikube ip>/30000
+> To obtain Minikube's IP address, run the following command :
+> ```sh
+> minikube ip
+> ```
 
 ### Testing
 
