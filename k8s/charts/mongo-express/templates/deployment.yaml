@@ -5,7 +5,7 @@ metadata:
   labels:
     app: mongo-express
 spec:
-  replicas: {{ .Values.replicaCount }}
+  replicas: {{ .Values.mongoExpress.replicaCount }}
   selector:
     matchLabels:
       app: mongo-express
@@ -16,9 +16,9 @@ spec:
     spec:
       containers:
         - name: mongo-express
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          image: "{{ .Values.mongoExpress.image.repository }}:{{ .Values.mongoExpress.image.tag }}"
           ports:
-            - containerPort: {{ .Values.containerPort }}
+            - containerPort: 8081
           env:
             - name: ME_CONFIG_MONGODB_URL
               value: mongodb://mongodb:27017
@@ -27,5 +27,5 @@ spec:
             - name: ME_CONFIG_BASICAUTH_PASSWORD
               value: "admin"
       securityContext:
-        runAsUser: {{ .Values.podSecurityContext.runAsUser }}
-        runAsNonRoot: {{ .Values.podSecurityContext.runAsNonRoot }}
+        runAsUser: {{ .Values.mongoExpress.podSecurityContext.runAsUser }}
+        runAsNonRoot: {{ .Values.mongoExpress.podSecurityContext.runAsNonRoot }}

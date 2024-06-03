@@ -5,10 +5,10 @@ metadata:
   labels:
     app: mongo-express
 spec:
-  type: NodePort
+  type: {{ .Values.mongoExpress.service.type }}
   ports:
-    - port: {{ .Values.service.port }}
-      targetPort: {{ .Values.containerPort }}
-      nodePort: 30000
+    - port: {{ .Values.mongoExpress.service.port }}
+      targetPort: {{ .Values.mongoExpress.containerPort }}
+      nodePort: {{ .Values.mongoExpress.service.nodePort }}
   selector:
     app: mongo-express

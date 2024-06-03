@@ -1,0 +1,8 @@
+alertmanager:
+  enabled: true
+
+server:
+  service:
+    type: NodePort
+    nodePort: 32000
+    port: 80

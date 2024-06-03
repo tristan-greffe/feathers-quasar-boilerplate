@@ -19,3 +19,9 @@ dependencies:
 - name: mongo-express
   version: 1.0.0
   repository: file://./charts/mongo-express
+- name: prometheus
+  version: 15.0.0
+  repository: https://prometheus-community.github.io/helm-charts
+- name: grafana
+  version: 6.11.0
+  repository: https://grafana.github.io/helm-charts

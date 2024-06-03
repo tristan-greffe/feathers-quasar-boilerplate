@@ -1,36 +1,35 @@
-# mongo-express default values
+#################################################
+## Mongo Express Helm task settings
+#################################################
 
-global:
-  subdomain: ""
-  certIssuer: ""
-  secret: ""
+#####################
+## Mongo Express settings
+#####################
 
-commonAnnotations: {}
-commonLabel: {}
+mongoExpress:
+  image:
+    repository: mongo-express
+    tag: latest
+    pullPolicy: IfNotPresent
+  replicaCount: 1
+  containerPort: 8081
+  autoscaling:
+    enabled: false
+  podSecurityContext:
+    runAsNonRoot: true
+    runAsUser: 1000
+  service:
+    enabled: true
+    type: NodePort
+    port: 8081
+    nodePort: 30000
+    annotations: {}
 
-replicaCount: 1
 
-image:
-  repository: mongo-express
-  tag: "latest"
-  pullPolicy: IfNotPresent
-
-forceRestart: false
-
-service:
-  enabled: true
-  type: NodePort
-  port: 8081
-  annotations: {}
+#####################
+## Ingress settings
+#####################
 
 ingress:
   enabled: false
   className: nginx
-
-containerPort: 8081
-
-resources: {}
-
-podSecurityContext:
-  runAsNonRoot: true
-  runAsUser: 1000
